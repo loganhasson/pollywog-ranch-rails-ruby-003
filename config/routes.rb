@@ -1,29 +1,36 @@
 PollywogRanchRailsRuby003::Application.routes.draw do
 
-  get '/ponds' => 'ponds#index'
-  post '/ponds' => 'ponds#create'
-  get '/ponds/new' => 'ponds#new', as: 'new_pond'
-  get '/ponds/:id' => 'ponds#show', as: 'pond'
-  get '/ponds/:id/edit' => 'ponds#edit', as: 'edit_pond'
-  patch '/ponds/:id' => 'ponds#update'
-  delete '/ponds/:id/destroy' => 'ponds#destroy', as: 'delete_pond'
-
-  get '/frogs' => 'frogs#index'
-  post '/frogs' => 'frogs#create'
-  get '/frogs/new' => 'frogs#new', as: 'new_frog'
-  get '/frogs/:id' => 'frogs#show', as: 'frog'
-  get '/frogs/:id/edit' => 'frogs#edit', as: 'edit_frog'
-  patch '/frogs/:id' => 'frogs#update'
-  delete '/frogs/:id/destroy' => 'frogs#destroy', as: 'delete_frog'
-
-  get '/tadpoles' => 'tadpoles#index'
   get '/frogs/:id/tadpoles/new' => 'tadpoles#new', as: 'new_tadpole'
-  post '/tadpoles' => 'tadpoles#create'
-  get '/tadpoles/:id' => 'tadpoles#show', as: 'tadpole'
-  get '/tadpoles/:id/edit' => 'tadpoles#edit', as: 'edit_tadpole'
-  patch '/tadpoles/:id' => 'tadpoles#update'
+  delete '/ponds/:id/destroy' => 'ponds#destroy', as: 'delete_pond'
+  delete '/frogs/:id/destroy' => 'frogs#destroy', as: 'delete_frog'
   delete '/tadpoles/:id/destroy' => 'tadpoles#destroy', as: 'delete_tadpole'
   get '/tadpoles/:id/evolve' => 'tadpoles#evolve', as: 'evolve_tadpole'
+  resources :ponds, :frogs, :tadpoles
+
+  # get '/ponds' => 'ponds#index'
+  # post '/ponds' => 'ponds#create'
+  # get '/ponds/new' => 'ponds#new', as: 'new_pond'
+  # get '/ponds/:id' => 'ponds#show', as: 'pond'
+  # get '/ponds/:id/edit' => 'ponds#edit', as: 'edit_pond'
+  # patch '/ponds/:id' => 'ponds#update'
+  # delete '/ponds/:id/destroy' => 'ponds#destroy', as: 'delete_pond'
+
+  # get '/frogs' => 'frogs#index'
+  # post '/frogs' => 'frogs#create'
+  # get '/frogs/new' => 'frogs#new', as: 'new_frog'
+  # get '/frogs/:id' => 'frogs#show', as: 'frog'
+  # get '/frogs/:id/edit' => 'frogs#edit', as: 'edit_frog'
+  # patch '/frogs/:id' => 'frogs#update'
+  # delete '/frogs/:id/destroy' => 'frogs#destroy', as: 'delete_frog'
+
+  # get '/tadpoles' => 'tadpoles#index'
+  # get '/frogs/:id/tadpoles/new' => 'tadpoles#new', as: 'new_tadpole'
+  # post '/tadpoles' => 'tadpoles#create'
+  # get '/tadpoles/:id' => 'tadpoles#show', as: 'tadpole'
+  # get '/tadpoles/:id/edit' => 'tadpoles#edit', as: 'edit_tadpole'
+  # patch '/tadpoles/:id' => 'tadpoles#update'
+  # delete '/tadpoles/:id/destroy' => 'tadpoles#destroy', as: 'delete_tadpole'
+  # get '/tadpoles/:id/evolve' => 'tadpoles#evolve', as: 'evolve_tadpole'
 
   root 'static#index'
 
