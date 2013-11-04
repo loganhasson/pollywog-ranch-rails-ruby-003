@@ -1,6 +1,13 @@
 PollywogRanchRailsRuby003::Application.routes.draw do
 
   get '/ponds' => 'ponds#index'
+  post '/ponds' => 'ponds#create'
+  get '/ponds/new' => 'ponds#new', as: 'new_pond'
+  get '/ponds/:id' => 'ponds#show', as: 'pond'
+  get '/ponds/:id/edit' => 'ponds#edit', as: 'edit_pond'
+  post '/ponds/:id/update' => 'ponds#update'
+  delete '/ponds/:id/destroy' => 'ponds#destroy'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
