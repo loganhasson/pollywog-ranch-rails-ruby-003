@@ -13,16 +13,16 @@ PollywogRanchRailsRuby003::Application.routes.draw do
   get '/frogs/new' => 'frogs#new', as: 'new_frog'
   get '/frogs/:id' => 'frogs#show', as: 'frog'
   get '/frogs/:id/edit' => 'frogs#edit', as: 'edit_frog'
-  post '/frogs/:id/update' => 'frogs#update'
-  delete '/frogs/:id/destroy' => 'frogs#destroy'
+  patch '/frogs/:id' => 'frogs#update'
+  delete '/frogs/:id/destroy' => 'frogs#destroy', as: 'delete_frog'
 
   get '/tadpoles' => 'tadpoles#index'
   get '/frogs/:id/tadpoles/new' => 'tadpoles#new', as: 'new_tadpole'
   post '/tadpoles' => 'tadpoles#create'
   get '/tadpoles/:id' => 'tadpoles#show', as: 'tadpole'
   get '/tadpoles/:id/edit' => 'tadpoles#edit', as: 'edit_tadpole'
-  post '/tadpoles/:id/update' => 'tadpoles#update'
-  delete '/tadpoles/:id/destroy' => 'tadpoles#destroy'
+  patch '/tadpoles/:id' => 'tadpoles#update'
+  delete '/tadpoles/:id/destroy' => 'tadpoles#destroy', as: 'delete_tadpole'
   get '/tadpoles/:id/evolve' => 'tadpoles#evolve'
 
   # The priority is based upon order of creation: first created -> highest priority.

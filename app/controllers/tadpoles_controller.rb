@@ -10,6 +10,7 @@ class TadpolesController < ApplicationController
   end
 
   def new
+    @tadpole = Tadpole.new
     @frog = Frog.find(params[:id])
   end
 
@@ -41,7 +42,7 @@ class TadpolesController < ApplicationController
 
   private
   def get_tadpole_params
-    params.require(:name).permit(:color, :frog_id)
+    params.require(:tadpole).permit(:name, :color, :frog_id)
   end
 
 end
