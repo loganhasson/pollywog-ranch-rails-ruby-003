@@ -23,7 +23,7 @@ PollywogRanchRailsRuby003::Application.routes.draw do
   get '/tadpoles/:id/edit' => 'tadpoles#edit', as: 'edit_tadpole'
   patch '/tadpoles/:id' => 'tadpoles#update'
   delete '/tadpoles/:id/destroy' => 'tadpoles#destroy', as: 'delete_tadpole'
-  get '/tadpoles/:id/evolve' => 'tadpoles#evolve'
+  get '/tadpoles/:id/evolve' => 'tadpoles#evolve', as: 'evolve_tadpole'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
