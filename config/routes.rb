@@ -5,7 +5,7 @@ PollywogRanchRailsRuby003::Application.routes.draw do
   get '/ponds/new' => 'ponds#new', as: 'new_pond'
   get '/ponds/:id' => 'ponds#show', as: 'pond'
   get '/ponds/:id/edit' => 'ponds#edit', as: 'edit_pond'
-  post '/ponds/:id/update' => 'ponds#update'
+  patch '/ponds/:id' => 'ponds#update'
   delete '/ponds/:id/destroy' => 'ponds#destroy', as: 'delete_pond'
 
   get '/frogs' => 'frogs#index'
