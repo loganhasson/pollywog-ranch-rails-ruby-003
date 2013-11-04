@@ -1,4 +1,4 @@
-<h1>Edit  <%= @frog.name %></h1>
+<h1>Edit <%= @frog.name %></h1>
 <%= form_for(@frog) do |f| %>
   <%= f.label :name, "Name" %>
   <%= f.text_field :name, placeholder: @frog.name %><br />
