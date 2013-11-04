@@ -25,6 +25,8 @@ PollywogRanchRailsRuby003::Application.routes.draw do
   delete '/tadpoles/:id/destroy' => 'tadpoles#destroy', as: 'delete_tadpole'
   get '/tadpoles/:id/evolve' => 'tadpoles#evolve', as: 'evolve_tadpole'
 
+  root 'static#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
