@@ -5,11 +5,7 @@
   <%= f.label :color, "Color" %>
   <%= f.text_field :color, placeholder: @frog.color %>
   <%= f.label :lives, "Lives" %>
-  <select id="lives" name="frog[pond_id]">
-    <% @ponds.each do |pond| %>
-      <option value="<%= pond.id %>"><%= pond.name %></option>
-    <% end %>
-  </select><br />
+  <%= f.select :pond_id, @ponds.map {|p| [p.name, p.id]} %>
   <%= f.submit %>
 <% end %>
 <%= link_to "Cancel", frogs_path %>
